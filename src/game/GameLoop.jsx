@@ -1,0 +1,7 @@
+
+const GameLoop = () => {
+
+    return (
+        <div/>
+    );
+}
