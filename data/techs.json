@@ -8,37 +8,44 @@
     {
       "id": 1,
       "name": "white-dwarf",
-      "_indesc": "space is now 150% effective."
+      "_indesc": "space is now 150% effective.",
+      "hidden_pg": "(p) => 1.5 * p"
     },
     {
       "id": 2,
       "name": "black-hole",
-      "_indesc": "space is now only 50% effective."
+      "_indesc": "space is now only 50% effective.",
+      "hidden_pg": "(p) => 0.5 * p"
     },
     {
       "id": 3,
       "name": "void",
-      "_indesc": "space will not work anymore."
+      "_indesc": "space will not work anymore.",
+      "hidden_pg": "(p) => 0 * p"
     },
     {
       "id": 4,
       "name": "time-travel",
-      "_indesc": "space is back to normal effectiveness."
+      "_indesc": "space is back to normal effectiveness.",
+      "hidden_pg": "(p) => p"
     },
     {
       "id": 5,
       "name": "supernova",
-      "_indesc": "space is now 500% effective."
+      "_indesc": "space is now 500% effective.",
+      "hidden_pg": "(p) => 5.0 * p"
     },
     {
       "id": 6,
       "name": "on-a-roll",
-      "_indesc": "gain an extra point each run"
+      "_indesc": "gain an extra point each run",
+      "hidden_pg": "(p) => 1+p"
     },
     {
       "id": 7,
       "name": "double-trouble",
-      "_indesc": "gain double the points each run"
+      "_indesc": "gain two extra points each run",
+      "hidden_pg": "(p) => 2 + p"
     },
     {
       "id": 8,
@@ -73,7 +80,8 @@
     {
       "id": 14,
       "name": "rando4life",
-      "_indesc": "get randomised points each run"
+      "_indesc": "get randomised points each run",
+      "hidden_pg": "(p) => Math.random(p)*10/10"
     },
     {
       "id": 15,
@@ -83,32 +91,38 @@
     {
       "id": 16,
       "name": "hacks",
-      "_indesc": "negate any future point gane"
+      "_indesc": "negate any future point gane",
+      "hidden_pg": "(p) => -1.0*p"
     },
     {
       "id": 17,
       "name": "meditate",
-      "_indesc": "press nothing to get 2p"
+      "_indesc": "press nothing to get 2p",
+      "hidden_pg": "(p) => 2+p"
     },
     {
       "id": 18,
       "name": "netflix-and-chill",
-      "_indesc": "do nothing and get 1p+1p"
+      "_indesc": "do nothing and get 2p+2p",
+      "hidden_pg": "(p) => 4+ p"
     },
     {
       "id": 19,
       "name": "paywall",
-      "_indesc": "cost of playing a game is increased by 1p"
+      "_indesc": "cost of playing a game is increased by 1p",
+      "hidden_pg": "(p) => p-1"
     },
     {
       "id": 20,
       "name": "bad-deal",
-      "_indesc": "spend one 1p to get 1p"
+      "_indesc": "spend one 1p to get 1p",
+      "hidden_pg": "(p) => p"
     },
     {
       "id": 21,
       "name": "ok-deal",
-      "_indesc": "spedn 1p to get 2p"
+      "_indesc": "spedn 1p to get 2p",
+      "hidden_pg": "(p) => p+1"
     },
     {
       "id": 22,
