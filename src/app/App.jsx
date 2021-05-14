@@ -19,8 +19,10 @@ export const App = () => {
     return (
         <>
             <Bar navigate={(e) => setHash(e)} points={points} />
-            {hash==='game' && <GameLoop rules={rules} />}
-            {hash==='tree' && <TechTree /> }
+            <div className='content'>
+                {hash==='game' && <GameLoop rules={rules} />}
+                {hash==='tree' && <TechTree /> }
+            </div>
         </>
     );
 
