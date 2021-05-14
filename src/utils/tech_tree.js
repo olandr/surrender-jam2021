@@ -1,4 +1,4 @@
-import data from '../../data/techs.json';
+import data from '../../data/techs';
 
 export const generateTree = () => {
     // graph payload (with minimalist structure)

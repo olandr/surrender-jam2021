@@ -1,4 +1,5 @@
 import React from 'react';
+import data from '../../data/techs';
 
 import { Emoji } from "../utils/assets";
 
@@ -6,32 +7,20 @@ export const loadRules = (points, setPoints) => {
     const reduced_pg = (cb) => {
         // Apply point_gain effects
         let acc = 1;
+        console.log(rules_hidden);
         rules_hidden.map((e, i) => {
-            acc = e.pg(acc);
+            acc = eval(e.hidden_pg)(acc);
         })
 
         // Update points at parent
         setPoints((prev) => prev+acc);
     }
-    const rules_hidden = [
-            {
-                id: 1,
-                pg: (p) => 1.5 * p,
-            },
-            {
-                id: 2,
-                pg: (p) => 0.5 * p,
-            },
-            {
-                id: 6,
-                pg: (p) => p +1,
-            },
-            {
-                id: 7,
-                pg: (p) => p + 2,
-            },
-        ]
-
+    // FIXME: get techs from the actual tech tree
+    const chosen_techs = (e) => {
+        const filter = [14];
+        return e.hidden_pg && !filter.includes(e.id) && true;
+    }
+    const rules_hidden = data?.nodes.filter(e => chosen_techs(e)).map(e => (({id, hidden_pg}) => ({id, hidden_pg}))(e))
     const rules_present = [
         {
             id: 0,
