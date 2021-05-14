@@ -1,0 +1,29 @@
+0	first-step	get one point by pressing space	-
+1	white-dwarf	space is now 150% effective.	0
+2	black-hole	space is now only 50% effective.	1
+3	void	space will not work anymore.	2
+4	time-travel	space is back to normal effectiveness.	2
+5	supernova	space is now 500% effective.	3
+6	on-a-roll	gain an extra point each run	0
+7	double-trouble	gain double the points each run	6
+8	dial-up	input telephone number to gain a point.	0
+9	hotline	press and hold "q" to sit in the queue for the points-hotline.	8
+10	customer-service	press and hold "w" to recieve person in hotline-queue.	9
+11	bad-internet	write "dinosaur" X times to get X points.	8
+12	ddr	press arrows in order to gain point	0
+13	typeracer	write something super quick to get points equal to the number of words typed.	12
+14	rando4life	get randomised points each run	0
+15	cheatcode	press number to get that many points	14
+16	hacks	negate any future point gane	15
+17	meditate	press nothing to get 2p	0
+18	netflix-and-chill	do nothing and get 1p+1p	17
+19	paywall	cost of playing a game is increased by 1p	0
+20	bad-deal	spend one 1p to get 1p	19
+21	ok-deal	spedn 1p to get 2p	20
+22	banker	5% interest rate on your saved points	0
+23	riksbanken	-1% interest rate on your saved points	22
+24	ragequit	set your saved points to 0	23
+25	fountain	spend a 1p (repeatable)	0
+26	donken-deal	reduce cost of techs by 1p	0
+27	supersale	reduce cost of techs by 10p	26
+28	markup	increase cost of techs by 10p	0

@@ -1,10 +1,14 @@
+import data from '../../data/techs.json';
+
 export const generateTree = () => {
     // graph payload (with minimalist structure)
-    return {
+    console.log(data);
+    console.log( {
         nodes: [{ id: "Harry" }, { id: "Sally" }, { id: "Alice" }],
         links: [
         { source: "Harry", target: "Sally" },
         { source: "Harry", target: "Alice" },
         ],
-    };
+    });
+    return data;
 }

@@ -1,0 +1,263 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "name": "first-step",
+      "_indesc": "get one point by pressing space"
+    },
+    {
+      "id": 1,
+      "name": "white-dwarf",
+      "_indesc": "space is now 150% effective."
+    },
+    {
+      "id": 2,
+      "name": "black-hole",
+      "_indesc": "space is now only 50% effective."
+    },
+    {
+      "id": 3,
+      "name": "void",
+      "_indesc": "space will not work anymore."
+    },
+    {
+      "id": 4,
+      "name": "time-travel",
+      "_indesc": "space is back to normal effectiveness."
+    },
+    {
+      "id": 5,
+      "name": "supernova",
+      "_indesc": "space is now 500% effective."
+    },
+    {
+      "id": 6,
+      "name": "on-a-roll",
+      "_indesc": "gain an extra point each run"
+    },
+    {
+      "id": 7,
+      "name": "double-trouble",
+      "_indesc": "gain double the points each run"
+    },
+    {
+      "id": 8,
+      "name": "dial-up",
+      "_indesc": "input telephone number to gain a point."
+    },
+    {
+      "id": 9,
+      "name": "hotline",
+      "_indesc": "press and hold \"q\" to sit in the queue for the points-hotline."
+    },
+    {
+      "id": 10,
+      "name": "customer-service",
+      "_indesc": "press and hold \"w\" to recieve person in hotline-queue."
+    },
+    {
+      "id": 11,
+      "name": "bad-internet",
+      "_indesc": "write \"dinosaur\" X times to get X points."
+    },
+    {
+      "id": 12,
+      "name": "ddr",
+      "_indesc": "press arrows in order to gain point"
+    },
+    {
+      "id": 13,
+      "name": "typeracer",
+      "_indesc": "write something super quick to get points equal to the number of words typed."
+    },
+    {
+      "id": 14,
+      "name": "rando4life",
+      "_indesc": "get randomised points each run"
+    },
+    {
+      "id": 15,
+      "name": "cheatcode",
+      "_indesc": "press number to get that many points"
+    },
+    {
+      "id": 16,
+      "name": "hacks",
+      "_indesc": "negate any future point gane"
+    },
+    {
+      "id": 17,
+      "name": "meditate",
+      "_indesc": "press nothing to get 2p"
+    },
+    {
+      "id": 18,
+      "name": "netflix-and-chill",
+      "_indesc": "do nothing and get 1p+1p"
+    },
+    {
+      "id": 19,
+      "name": "paywall",
+      "_indesc": "cost of playing a game is increased by 1p"
+    },
+    {
+      "id": 20,
+      "name": "bad-deal",
+      "_indesc": "spend one 1p to get 1p"
+    },
+    {
+      "id": 21,
+      "name": "ok-deal",
+      "_indesc": "spedn 1p to get 2p"
+    },
+    {
+      "id": 22,
+      "name": "banker",
+      "_indesc": "5% interest rate on your saved points"
+    },
+    {
+      "id": 23,
+      "name": "riksbanken",
+      "_indesc": "-1% interest rate on your saved points"
+    },
+    {
+      "id": 24,
+      "name": "ragequit",
+      "_indesc": "set your saved points to 0"
+    },
+    {
+      "id": 25,
+      "name": "fountain",
+      "_indesc": "spend a 1p (repeatable)"
+    },
+    {
+      "id": 26,
+      "name": "donken-deal",
+      "_indesc": "reduce cost of techs by 1p"
+    },
+    {
+      "id": 27,
+      "name": "supersale",
+      "_indesc": "reduce cost of techs by 10p"
+    },
+    {
+      "id": 28,
+      "name": "markup",
+      "_indesc": "increase cost of techs by 10p"
+    }
+  ],
+  "links": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 4
+    },
+    {
+      "source": 3,
+      "target": 5
+    },
+    {
+      "source": 0,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 0,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 8,
+      "target": 11
+    },
+    {
+      "source": 0,
+      "target": 12
+    },
+    {
+      "source": 12,
+      "target": 13
+    },
+    {
+      "source": 0,
+      "target": 14
+    },
+    {
+      "source": 14,
+      "target": 15
+    },
+    {
+      "source": 15,
+      "target": 16
+    },
+    {
+      "source": 0,
+      "target": 17
+    },
+    {
+      "source": 17,
+      "target": 18
+    },
+    {
+      "source": 0,
+      "target": 19
+    },
+    {
+      "source": 19,
+      "target": 20
+    },
+    {
+      "source": 20,
+      "target": 21
+    },
+    {
+      "source": 0,
+      "target": 22
+    },
+    {
+      "source": 22,
+      "target": 23
+    },
+    {
+      "source": 23,
+      "target": 24
+    },
+    {
+      "source": 0,
+      "target": 25
+    },
+    {
+      "source": 0,
+      "target": 26
+    },
+    {
+      "source": 26,
+      "target": 27
+    },
+    {
+      "source": 0,
+      "target": 28
+    }
+  ]
+}
