@@ -1,7 +1,14 @@
+import React from 'react';
 
-const GameLoop = () => {
-
+export const GameLoop = (props) => {
     return (
-        <div/>
+        <>
+        {
+            props.rules?.map((e,i) => {
+
+                return (e.handle)
+            })
+        }
+        </>
     );
 }
