@@ -5,23 +5,20 @@ import {Bar} from '../bar/Bar.jsx';
 
 import {TechTree} from '../tech/Techtree.jsx';
 import {GameLoop} from '../game/GameLoop.jsx';
-import { Basic } from '../rules/Rules.jsx';
+import { loadRules } from '../rules/Rules.jsx';
 
 export const App = () => {
     const [rules, setRules] = useState([]);
     const [hash, setHash] = useState('game');
+    const [points, setPoints] = useState(0);
+    
     useEffect(() => {
-        //setRules(loadRules());
-        setRules([
-            {
-                handle: <Basic />
-            }
-        ])
+        setRules(loadRules(points, setPoints));
     }, []);
 
     return (
         <>
-            <Bar navigate={(e) => setHash(e)} />
+            <Bar navigate={(e) => setHash(e)} points={points} />
             {hash==='game' && <GameLoop rules={rules} />}
             {hash==='tree' && <TechTree /> }
         </>
