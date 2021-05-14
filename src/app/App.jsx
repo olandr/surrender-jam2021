@@ -1,15 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import {Home} from '../home/Home.jsx';
+import {Bar} from '../bar/Bar.jsx';
+
+import {TechTree} from '../tech/Techtree.jsx';
+import {GameLoop} from '../game/GameLoop.jsx';
+import { Basic } from '../rules/Rules.jsx';
 
 export const App = () => {
+    const [rules, setRules] = useState([]);
+    const [hash, setHash] = useState('game');
+    useEffect(() => {
+        //setRules(loadRules());
+        setRules([
+            {
+                handle: <Basic />
+            }
+        ])
+    }, []);
+
     return (
-        <Router>
-            <Switch>
-                <Route path='/'>
-                    <Home />
-                </Route>
-            </Switch>
-        </Router>
-    )
+        <>
+            <Bar navigate={(e) => setHash(e)} />
+            {hash==='game' && <GameLoop rules={rules} />}
+            {hash==='tree' && <TechTree /> }
+        </>
+    );
+
 }
