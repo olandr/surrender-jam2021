@@ -2,276 +2,276 @@
   "nodes": [
     {
       "id": 0,
-      "name": "first-step",
-      "_indesc": "get one point by pressing space"
+      "label": "first-step",
+      "title": "get one point by pressing space"
     },
     {
       "id": 1,
-      "name": "white-dwarf",
-      "_indesc": "space is now 150% effective.",
+      "label": "white-dwarf",
+      "title": "space is now 150% effective.",
       "hidden_pg": "(p) => 1.5 * p"
     },
     {
       "id": 2,
-      "name": "black-hole",
-      "_indesc": "space is now only 50% effective.",
+      "label": "black-hole",
+      "title": "space is now only 50% effective.",
       "hidden_pg": "(p) => 0.5 * p"
     },
     {
       "id": 3,
-      "name": "void",
-      "_indesc": "space will not work anymore.",
+      "label": "void",
+      "title": "space will not work anymore.",
       "hidden_pg": "(p) => 0 * p"
     },
     {
       "id": 4,
-      "name": "time-travel",
-      "_indesc": "space is back to normal effectiveness.",
+      "label": "time-travel",
+      "title": "space is back to normal effectiveness.",
       "hidden_pg": "(p) => p"
     },
     {
       "id": 5,
-      "name": "supernova",
-      "_indesc": "space is now 500% effective.",
+      "label": "supernova",
+      "title": "space is now 500% effective.",
       "hidden_pg": "(p) => 5.0 * p"
     },
     {
       "id": 6,
-      "name": "on-a-roll",
-      "_indesc": "gain an extra point each run",
+      "label": "on-a-roll",
+      "title": "gain an extra point each run",
       "hidden_pg": "(p) => 1+p"
     },
     {
       "id": 7,
-      "name": "double-trouble",
-      "_indesc": "gain two extra points each run",
+      "label": "double-trouble",
+      "title": "gain two extra points each run",
       "hidden_pg": "(p) => 2 + p"
     },
     {
       "id": 8,
-      "name": "dial-up",
-      "_indesc": "input telephone number to gain a point."
+      "label": "dial-up",
+      "title": "input telephone number to gain a point."
     },
     {
       "id": 9,
-      "name": "hotline",
-      "_indesc": "press and hold \"q\" to sit in the queue for the points-hotline."
+      "label": "hotline",
+      "title": "press and hold \"q\" to sit in the queue for the points-hotline."
     },
     {
       "id": 10,
-      "name": "customer-service",
-      "_indesc": "press and hold \"w\" to recieve person in hotline-queue."
+      "label": "customer-service",
+      "title": "press and hold \"w\" to recieve person in hotline-queue."
     },
     {
       "id": 11,
-      "name": "bad-internet",
-      "_indesc": "write \"dinosaur\" X times to get X points."
+      "label": "bad-internet",
+      "title": "write \"dinosaur\" X times to get X points."
     },
     {
       "id": 12,
-      "name": "ddr",
-      "_indesc": "press arrows in order to gain point"
+      "label": "ddr",
+      "title": "press arrows in order to gain point"
     },
     {
       "id": 13,
-      "name": "typeracer",
-      "_indesc": "write something super quick to get points equal to the number of words typed."
+      "label": "typeracer",
+      "title": "write something super quick to get points equal to the number of words typed."
     },
     {
       "id": 14,
-      "name": "rando4life",
-      "_indesc": "get randomised points each run",
+      "label": "rando4life",
+      "title": "get randomised points each run",
       "hidden_pg": "(p) => Math.random(p)*10/10"
     },
     {
       "id": 15,
-      "name": "cheatcode",
-      "_indesc": "press number to get that many points"
+      "label": "cheatcode",
+      "title": "press number to get that many points"
     },
     {
       "id": 16,
-      "name": "hacks",
-      "_indesc": "negate any future point gane",
+      "label": "hacks",
+      "title": "negate any future point gane",
       "hidden_pg": "(p) => -1.0*p"
     },
     {
       "id": 17,
-      "name": "meditate",
-      "_indesc": "press nothing to get 2p",
+      "label": "meditate",
+      "title": "press nothing to get 2p",
       "hidden_pg": "(p) => 2+p"
     },
     {
       "id": 18,
-      "name": "netflix-and-chill",
-      "_indesc": "do nothing and get 2p+2p",
+      "label": "netflix-and-chill",
+      "title": "do nothing and get 2p+2p",
       "hidden_pg": "(p) => 4+ p"
     },
     {
       "id": 19,
-      "name": "paywall",
-      "_indesc": "cost of playing a game is increased by 1p",
+      "label": "paywall",
+      "title": "cost of playing a game is increased by 1p",
       "hidden_pg": "(p) => p-1"
     },
     {
       "id": 20,
-      "name": "bad-deal",
-      "_indesc": "spend one 1p to get 1p",
+      "label": "bad-deal",
+      "title": "spend one 1p to get 1p",
       "hidden_pg": "(p) => p"
     },
     {
       "id": 21,
-      "name": "ok-deal",
-      "_indesc": "spedn 1p to get 2p",
+      "label": "ok-deal",
+      "title": "spedn 1p to get 2p",
       "hidden_pg": "(p) => p+1"
     },
     {
       "id": 22,
-      "name": "banker",
-      "_indesc": "5% interest rate on your saved points"
+      "label": "banker",
+      "title": "5% interest rate on your saved points"
     },
     {
       "id": 23,
-      "name": "riksbanken",
-      "_indesc": "-1% interest rate on your saved points"
+      "label": "riksbanken",
+      "title": "-1% interest rate on your saved points"
     },
     {
       "id": 24,
-      "name": "ragequit",
-      "_indesc": "set your saved points to 0"
+      "label": "ragequit",
+      "title": "set your saved points to 0"
     },
     {
       "id": 25,
-      "name": "fountain",
-      "_indesc": "spend a 1p (repeatable)"
+      "label": "fountain",
+      "title": "spend a 1p (repeatable)"
     },
     {
       "id": 26,
-      "name": "donken-deal",
-      "_indesc": "reduce cost of techs by 1p"
+      "label": "donken-deal",
+      "title": "reduce cost of techs by 1p"
     },
     {
       "id": 27,
-      "name": "supersale",
-      "_indesc": "reduce cost of techs by 10p"
+      "label": "supersale",
+      "title": "reduce cost of techs by 10p"
     },
     {
       "id": 28,
-      "name": "markup",
-      "_indesc": "increase cost of techs by 10p"
+      "label": "markup",
+      "title": "increase cost of techs by 10p"
     }
   ],
-  "links": [
+  "edges": [
     {
-      "source": 0,
-      "target": 1
+      "from": 0,
+      "to": 1
     },
     {
-      "source": 1,
-      "target": 2
+      "from": 1,
+      "to": 2
     },
     {
-      "source": 2,
-      "target": 3
+      "from": 2,
+      "to": 3
     },
     {
-      "source": 2,
-      "target": 4
+      "from": 2,
+      "to": 4
     },
     {
-      "source": 3,
-      "target": 5
+      "from": 3,
+      "to": 5
     },
     {
-      "source": 0,
-      "target": 6
+      "from": 0,
+      "to": 6
     },
     {
-      "source": 6,
-      "target": 7
+      "from": 6,
+      "to": 7
     },
     {
-      "source": 0,
-      "target": 8
+      "from": 0,
+      "to": 8
     },
     {
-      "source": 8,
-      "target": 9
+      "from": 8,
+      "to": 9
     },
     {
-      "source": 9,
-      "target": 10
+      "from": 9,
+      "to": 10
     },
     {
-      "source": 8,
-      "target": 11
+      "from": 8,
+      "to": 11
     },
     {
-      "source": 0,
-      "target": 12
+      "from": 0,
+      "to": 12
     },
     {
-      "source": 12,
-      "target": 13
+      "from": 12,
+      "to": 13
     },
     {
-      "source": 0,
-      "target": 14
+      "from": 0,
+      "to": 14
     },
     {
-      "source": 14,
-      "target": 15
+      "from": 14,
+      "to": 15
     },
     {
-      "source": 15,
-      "target": 16
+      "from": 15,
+      "to": 16
     },
     {
-      "source": 0,
-      "target": 17
+      "from": 0,
+      "to": 17
     },
     {
-      "source": 17,
-      "target": 18
+      "from": 17,
+      "to": 18
     },
     {
-      "source": 0,
-      "target": 19
+      "from": 0,
+      "to": 19
     },
     {
-      "source": 19,
-      "target": 20
+      "from": 19,
+      "to": 20
     },
     {
-      "source": 20,
-      "target": 21
+      "from": 20,
+      "to": 21
     },
     {
-      "source": 0,
-      "target": 22
+      "from": 0,
+      "to": 22
     },
     {
-      "source": 22,
-      "target": 23
+      "from": 22,
+      "to": 23
     },
     {
-      "source": 23,
-      "target": 24
+      "from": 23,
+      "to": 24
     },
     {
-      "source": 0,
-      "target": 25
+      "from": 0,
+      "to": 25
     },
     {
-      "source": 0,
-      "target": 26
+      "from": 0,
+      "to": 26
     },
     {
-      "source": 26,
-      "target": 27
+      "from": 26,
+      "to": 27
     },
     {
-      "source": 0,
-      "target": 28
+      "from": 0,
+      "to": 28
     }
   ]
 }
