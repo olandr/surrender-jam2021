@@ -4,7 +4,7 @@ import Graph from "react-graph-vis";
 
 export const TechTree = (props) => {
   const [tree, setTree] = useState();
-  const [cart, setCart] = useState([0]);
+  const [cart, setCart] = useState([]);
   const [overdraft, setOverdraft] = useState(false);
   const [ruleAddition, setRuleAddition] = useState(0);
   useEffect(() => {
@@ -56,6 +56,7 @@ export const TechTree = (props) => {
     let tc = totalCost(cart);
     if (!overdraft && tc >= 0) {
       let cart_ids = cart.map((e) => (({ id }) => ({ id }))(e)["id"]);
+      cart_ids.push(0);
       props.onPayment(cart_ids, tc);
     }
   };
@@ -78,7 +79,6 @@ export const TechTree = (props) => {
 
     // Calculate total cost
     let tc = totalCost(cart);
-
     return c + tc <= props.wallet;
   };
 
@@ -106,7 +106,7 @@ export const TechTree = (props) => {
               <button onClick={checkout}>Pay techs</button>
               <button
                 onClick={() => {
-                  setCart([0]);
+                  setCart([]);
                   setOverdraft(false);
                 }}
               >
