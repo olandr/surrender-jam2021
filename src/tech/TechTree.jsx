@@ -5,6 +5,7 @@ import Graph from "react-graph-vis";
 export const TechTree = (props) => {
   const [tree, setTree] = useState();
   const [cart, setCart] = useState([]);
+  const [overdraft, setOverdraft] = useState(false);
 
   useEffect(() => {
     setTree(generateTree());
@@ -12,6 +13,9 @@ export const TechTree = (props) => {
 
   // the graph configuration, just override the ones you need
   const options = {
+    layout: {
+      randomSeed: "Batman2",
+    },
     interaction: {
       multiselect: true,
       hover: true,
@@ -44,25 +48,56 @@ export const TechTree = (props) => {
   };
 
   const checkout = () => {
-    // FIXME: calculate the cost of the cart
-    let total_cost = 10;
-    props.onPayment(cart, total_cost);
+    let tc = totalCost(cart);
+    if (!overdraft && tc >= 0) {
+      let cart_ids = cart.map((e) => (({ id }) => ({ id }))(e)["id"]);
+      props.onPayment(cart_ids, tc);
+    }
+  };
+
+  const totalCost = (vec) => {
+    // Discount the already bought techs:
+    let already_bought = tree?.nodes
+      .filter((n) => props.bought.includes(n.id))
+      .reduce((acc, next) => acc + next.cost, 0);
+    return vec.reduce((acc, next) => acc + next.cost, 0) - already_bought;
+  };
+
+  const isPurchasable = (id) => {
+    // Calculate cost of the newly selected tech
+    let c = tree?.nodes.find((n) => n.id === id)?.cost;
+
+    // Calculate total cost
+    let tc = totalCost(cart);
+
+    return c + tc <= props.wallet;
   };
 
   const events = {
-    hold: (e) => {
-      // FIXME: prevent over-drafting the wallet.
-      console.log(e);
-      setCart(e.nodes);
+    select: (e) => {
+      if (isPurchasable(e.nodes[e.nodes.length - 1])) {
+        let c = tree?.nodes.filter((n) => e.nodes.includes(n.id));
+        setCart(c);
+      } else {
+        console.log("YOU WILL OVERDRAFT!");
+        setOverdraft(true);
+      }
     },
   };
-  console.log("cool");
 
   return (
     <>
       {tree && (
         <>
           <button onClick={checkout}>Pay techs</button>
+          <button
+            onClick={() => {
+              setCart([]);
+              setOverdraft(false);
+            }}
+          >
+            Clear techs
+          </button>
           <Graph
             id="tech-graph"
             graph={tree}

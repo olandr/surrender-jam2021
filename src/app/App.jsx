@@ -10,22 +10,21 @@ import { loadRules } from "../rules/Rules.jsx";
 export const App = () => {
   const [rules, setRules] = useState([]);
   const [hash, setHash] = useState("tree");
-  const [points, setPoints] = useState(0);
+  const [points, setPoints] = useState(10);
   // FIXME: get techs from the actual tech tree
   const [techTree, setTechTree] = useState([0]);
-
-  const [bought, setBought] = useState([0, 1, 2]);
+  const [bought, setBought] = useState([0]);
 
   useEffect(() => {
     setRules(loadRules(techTree, points, setPoints));
-  }, []);
+  }, [techTree]);
 
   const handlePayment = (t, c) => {
     setPoints((prev) => prev - c);
     setTechTree(t);
     setBought(t);
+    setHash("game");
   };
-  console.log("bought:", bought, ", techTree", techTree);
 
   return (
     <>
