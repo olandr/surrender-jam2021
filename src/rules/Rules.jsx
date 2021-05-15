@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import data from '../../data/techs';
 
-import { Emoji } from "../utils/assets";
+import { Emoji, NumPad } from "../utils/assets";
 
 export const loadRules = (techTree, points, setPoints) => {
     let rawAcc = 0;
@@ -38,6 +38,10 @@ export const loadRules = (techTree, points, setPoints) => {
             handle: <Basic point_gain={reduced_pg}/>,
         },
         {
+            id: 8,
+            handle: <NumPad onFinish={e => setRawAcc(e)} />
+        },
+        {
             id: 15,
             handle: <NumInput setVal={(p) => val += p } onFinish={e => setRawAcc(e)} />
         }
@@ -72,3 +76,4 @@ const NumInput = (props) => {
         <input onChange={(e) => handleChange(e.target.value)} />
     )
 }
+

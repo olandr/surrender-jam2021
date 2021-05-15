@@ -29,3 +29,28 @@ body {
     justify-content: space-evenly;
 
 }
+
+.num-pad {
+    font-weight: bold;
+    tr {
+        line-height: 4em;
+    }
+    td {
+        text-align: center;
+        width: 4em;
+        padding: 0;
+        border: none;
+    }
+
+    button {
+        font-family: 'Reenie Beanie', cursive;
+        font-size: 4em;
+        background: white;
+        border-collapse: collapse;
+        border-radius: 5px;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        
+    }
+}
