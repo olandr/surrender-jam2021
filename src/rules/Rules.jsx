@@ -20,6 +20,7 @@ export const loadRules = (techTree, points, setPoints) => {
 
     // Add presentable pg modifiers
     acc += parseInt(rawAcc);
+
     // Update points at parent
     setPoints((prev) => prev + acc);
   };
@@ -88,6 +89,14 @@ export const loadRules = (techTree, points, setPoints) => {
       id: 15,
       handle: <NumInput onFinish={(e) => setRawAcc(e)} />,
     },
+    {
+      id: 24,
+      handle: <Trash onClick={() => setPoints(0)} />,
+    },
+    {
+      id: 25,
+      handle: <Fountain onClick={() => setPoints((prev) => prev - 1)} />,
+    },
   ].filter((e) => chosen_techs(e));
 
   return rules_present;
@@ -99,6 +108,14 @@ const Basic = (props) => {
     props.point_gain();
   };
   return <Emoji symbol="🔥" onClick={handleClick} />;
+};
+
+const Trash = (props) => {
+  return <Emoji symbol="🚒" onClick={props.onClick} />;
+};
+
+const Fountain = (props) => {
+  return <Emoji symbol="🧯" onClick={props.onClick} />;
 };
 
 const NumInput = (props) => {
