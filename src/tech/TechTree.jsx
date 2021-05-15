@@ -4,7 +4,7 @@ import Graph from "react-graph-vis";
 
 export const TechTree = (props) => {
   const [tree, setTree] = useState();
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState([0]);
   const [overdraft, setOverdraft] = useState(false);
   const [ruleAddition, setRuleAddition] = useState(0);
   useEffect(() => {
@@ -12,9 +12,7 @@ export const TechTree = (props) => {
   }, []);
 
   useEffect(() => {
-    console.log(props.rules);
     let ra = props.rules?.reduce((acc, next) => next.handle(acc), 0);
-    console.log(ra);
     setRuleAddition(ra);
   }, [props.rules]);
 
@@ -100,15 +98,22 @@ export const TechTree = (props) => {
     <>
       {tree && (
         <>
-          <button onClick={checkout}>Pay techs</button>
-          <button
-            onClick={() => {
-              setCart([]);
-              setOverdraft(false);
-            }}
-          >
-            Clear techs
-          </button>
+          <div className="tech">
+            {overdraft && (
+              <div className="overdraft">YOU WILL OVERDRAFT YOUR ACCOUNT</div>
+            )}
+            <div style={{ display: "block" }}>
+              <button onClick={checkout}>Pay techs</button>
+              <button
+                onClick={() => {
+                  setCart([0]);
+                  setOverdraft(false);
+                }}
+              >
+                Clear techs
+              </button>
+            </div>
+          </div>
           <Graph
             id="tech-graph"
             graph={tree}
