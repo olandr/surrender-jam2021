@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import { generateTree } from "../utils/tech_tree.js";
 import Graph from "react-graph-vis";
 
-export const TechTree = () => {
-  const [tree, setTree] = useState(null);
+export const TechTree = (props) => {
+  const [tree, setTree] = useState();
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     setTree(generateTree());
@@ -39,17 +40,38 @@ export const TechTree = () => {
   };
 
   const handleNetwork = (network) => {
-    network.selectNodes([0, 1, 2]);
+    network.selectNodes(props.bought);
   };
 
+  const checkout = () => {
+    // FIXME: calculate the cost of the cart
+    let total_cost = 10;
+    props.onPayment(cart, total_cost);
+  };
+
+  const events = {
+    hold: (e) => {
+      // FIXME: prevent over-drafting the wallet.
+      console.log(e);
+      setCart(e.nodes);
+    },
+  };
+  console.log("cool");
+
   return (
-    tree && (
-      <Graph
-        id="tech-graph"
-        graph={tree}
-        options={options}
-        getNetwork={(net) => handleNetwork(net)}
-      />
-    )
+    <>
+      {tree && (
+        <>
+          <button onClick={checkout}>Pay techs</button>
+          <Graph
+            id="tech-graph"
+            graph={tree}
+            options={options}
+            events={events}
+            getNetwork={(net) => handleNetwork(net)}
+          />
+        </>
+      )}
+    </>
   );
 };
