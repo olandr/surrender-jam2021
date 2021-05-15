@@ -10,7 +10,7 @@ import { loadRules } from "../rules/Rules.jsx";
 export const App = () => {
   const [rules, setRules] = useState([]);
   const [hash, setHash] = useState("tree");
-  const [points, setPoints] = useState(1000);
+  const [points, setPoints] = useState(500);
   // FIXME: get techs from the actual tech tree
   const [techTree, setTechTree] = useState([0]);
   const [bought, setBought] = useState([0]);
@@ -18,6 +18,20 @@ export const App = () => {
   useEffect(() => {
     setRules(loadRules(techTree, points, setPoints));
   }, [techTree]);
+
+  useEffect(() => {
+    if (rules.bank) {
+      console.log(rules.bank);
+      let interested = rules?.bank.reduce(
+        (acc, next) => next.handle(acc),
+        points
+      );
+      interested = Math.round(interested);
+      if (interested >= 0) {
+        setPoints(interested);
+      }
+    }
+  }, [hash]);
 
   const handlePayment = (t, c) => {
     setPoints((prev) => prev - c);
@@ -30,9 +44,10 @@ export const App = () => {
     <>
       <Bar navigate={(e) => setHash(e)} points={points} />
       <div className="content">
-        {hash === "game" && <GameLoop rules={rules} />}
+        {hash === "game" && <GameLoop rules={rules?.present} />}
         {hash === "tree" && (
           <TechTree
+            rules={rules?.tech}
             bought={bought}
             wallet={points}
             onPayment={(tree, cost) => handlePayment(tree, cost)}

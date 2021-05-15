@@ -98,8 +98,24 @@ export const loadRules = (techTree, points, setPoints) => {
       handle: <Fountain onClick={() => setPoints((prev) => prev - 1)} />,
     },
   ].filter((e) => chosen_techs(e));
+  const rules_tech = [].filter((e) => chosen_techs(e));
+  const rules_bank = [
+    {
+      id: 22,
+      handle: (p) => p * 1.05,
+    },
+    {
+      id: 23,
+      handle: (p) => p * 0.99,
+    },
+  ].filter((e) => chosen_techs(e));
 
-  return rules_present;
+  return {
+    //hidden: rules_hidden, // unused else-where as it is a side-effect by loading rules in the first-place
+    present: rules_present,
+    tech: rules_tech,
+    bank: rules_bank,
+  };
 };
 
 const Basic = (props) => {
