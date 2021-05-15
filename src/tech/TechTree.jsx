@@ -26,7 +26,7 @@ export const TechTree = (props) => {
       hover: true,
     },
     nodes: {
-      size: 200,
+      size: 600,
       color: {
         background: "#FF5733",
         border: "#2B42FF",
@@ -39,7 +39,7 @@ export const TechTree = (props) => {
       },
       label: "label",
       font: {
-        face: '"Reenie Beanie", cursive',
+        face: '"Pangolin", cursive',
         size: 20,
       },
     },
