@@ -43,16 +43,19 @@ export const App = () => {
   return (
     <>
       <Bar navigate={(e) => setHash(e)} points={points} />
-      <div className="content">
-        {hash === "game" && <GameLoop rules={rules?.present} />}
-        {hash === "tree" && (
-          <TechTree
-            rules={rules?.tech}
-            bought={bought}
-            wallet={points}
-            onPayment={(tree, cost) => handlePayment(tree, cost)}
-          />
-        )}
+      <div className="content-wrapper">
+        <div>{"🔥".repeat(1 + points / 2)}</div>
+        <div className="content">
+          {hash === "game" && <GameLoop rules={rules?.present} />}
+          {hash === "tree" && (
+            <TechTree
+              rules={rules?.tech}
+              bought={bought}
+              wallet={points}
+              onPayment={(tree, cost) => handlePayment(tree, cost)}
+            />
+          )}
+        </div>
       </div>
     </>
   );
