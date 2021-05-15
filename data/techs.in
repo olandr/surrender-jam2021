@@ -1,29 +1,29 @@
-0	first-step	get one point by pressing space
-1	white-dwarf	space is now 150% effective.	0	(p) => 1.5 * p
-2	black-hole	space is now only 50% effective.	1	(p) => 0.5 * p
-3	void	space will not work anymore.	2	(p) => 0 * p
-4	time-travel	space is back to normal effectiveness.	2	(p) => p
-5	supernova	space is now 500% effective.	3	(p) => 5.0 * p
-6	on-a-roll	gain an extra point each run	0	(p) => 1+p
-7	double-trouble	gain two extra points each run	6	(p) => 2 + p
-8	dial-up	input telephone number to gain a point.	0	
-9	hotline	press and hold "q" to sit in the queue for the points-hotline.	8	
-10	customer-service	press and hold "w" to recieve person in hotline-queue.	9	
-11	bad-internet	write "dinosaur" X times to get X points.	8	
-12	ddr	press arrows in order to gain point	0	
-13	typeracer	write something super quick to get points equal to the number of words typed.	12	
-14	rando4life	get randomised points each run	0	(p) => Math.random(p)*10/10
-15	cheatcode	press number to get that many points	14	
-16	hacks	negate any future point gane	15	(p) => -1.0*p
-17	meditate	press nothing to get 2p	0	(p) => 2+p
-18	netflix-and-chill	do nothing and get 2p+2p	17	(p) => 4+ p
-19	paywall	cost of playing a game is increased by 1p	0	(p) => p-1
-20	bad-deal	spend one 1p to get 1p	19	(p) => p
-21	ok-deal	spedn 1p to get 2p	20	(p) => p+1
-22	banker	5% interest rate on your saved points	0	
-23	riksbanken	-1% interest rate on your saved points	22	
-24	ragequit	set your saved points to 0	23	
-25	fountain	spend a 1p (repeatable)	0	
-26	donken-deal	reduce cost of techs by 1p	0	
-27	supersale	reduce cost of techs by 10p	26	
-28	markup	increase cost of techs by 10p	0	
+0	first-step	get one point by pressing space	-	0		
+1	white-dwarf	space is now 150% effective.	0	1	(p) => 1.5 * p	
+2	black-hole	space is now only 50% effective.	1	2	(p) => 0.5 * p	
+3	void	space will not work anymore.	2	69	(p) => 0 * p	
+4	time-travel	space is back to normal effectiveness.	2	420	(p) => p	
+5	supernova	space is now 500% effective.	3	666	(p) => 5.0 * p	
+6	on-a-roll	gain an extra point each run	0	10	(p) => 1+p	
+7	double-trouble	gain two extra points each run	6	20	(p) => 2 + p	
+8	dial-up	input telephone number to gain a point.	0	100		
+9	hotline	press and hold "q" to sit in the queue for the points-hotline.	8	300		
+10	customer-service	press and hold "w" to recieve person in hotline-queue.	9	300		
+11	bad-internet	write "dinosaur" X times to get X points.	8	40		
+12	ddr	press arrows in order to gain point	0	1		
+13	typeracer	write something super quick to get points equal to the number of words typed.	12	10		
+14	rando4life	get randomised points each run	0	1	(p) => Math.random(p)*10/10	
+15	cheatcode	press number to get that many points	14	300		
+16	hacks	negate any future points gained	15	10000	(p) => -1.0*p	
+17	meditate	press nothing to get 2p	0	40	(p) => 2+p	
+18	netflix-and-chill	do nothing and get 2p+2p	17	40	(p) => 4+ p	
+19	paywall	cost of playing a game is increased by 1p	0	10	(p) => p-1	
+20	bad-deal	spend one 1p to get 1p	19	100	(p) => p	
+21	ok-deal	spend 1p to get 2p	20	100	(p) => p+1	
+22	banker	5% interest rate on your saved points	0	200		
+23	riksbanken	-1% interest rate on your saved points	22	500		
+24	ragequit	set your saved points to 0	23	1000		
+25	fountain	spend a 1p (repeatable)	0	500		
+26	donken-deal	reduce cost of techs by 1p	0	10		
+27	supersale	reduce cost of techs by 10p	26	100		
+28	markup	increase cost of techs by 10p	0	100		

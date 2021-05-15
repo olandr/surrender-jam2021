@@ -3,161 +3,190 @@
     {
       "id": 0,
       "label": "first-step",
-      "title": "get one point by pressing space"
+      "title": "get one point by pressing space (0p)",
+      "cost": 0
     },
     {
       "id": 1,
       "label": "white-dwarf",
-      "title": "space is now 150% effective.",
+      "title": "space is now 150% effective. (1p)",
+      "cost": 1,
       "hidden_pg": "(p) => 1.5 * p"
     },
     {
       "id": 2,
       "label": "black-hole",
-      "title": "space is now only 50% effective.",
+      "title": "space is now only 50% effective. (2p)",
+      "cost": 2,
       "hidden_pg": "(p) => 0.5 * p"
     },
     {
       "id": 3,
       "label": "void",
-      "title": "space will not work anymore.",
+      "title": "space will not work anymore. (69p)",
+      "cost": 69,
       "hidden_pg": "(p) => 0 * p"
     },
     {
       "id": 4,
       "label": "time-travel",
-      "title": "space is back to normal effectiveness.",
+      "title": "space is back to normal effectiveness. (420p)",
+      "cost": 420,
       "hidden_pg": "(p) => p"
     },
     {
       "id": 5,
       "label": "supernova",
-      "title": "space is now 500% effective.",
+      "title": "space is now 500% effective. (666p)",
+      "cost": 666,
       "hidden_pg": "(p) => 5.0 * p"
     },
     {
       "id": 6,
       "label": "on-a-roll",
-      "title": "gain an extra point each run",
+      "title": "gain an extra point each run (10p)",
+      "cost": 10,
       "hidden_pg": "(p) => 1+p"
     },
     {
       "id": 7,
       "label": "double-trouble",
-      "title": "gain two extra points each run",
+      "title": "gain two extra points each run (20p)",
+      "cost": 20,
       "hidden_pg": "(p) => 2 + p"
     },
     {
       "id": 8,
       "label": "dial-up",
-      "title": "input telephone number to gain a point."
+      "title": "input telephone number to gain a point. (100p)",
+      "cost": 100
     },
     {
       "id": 9,
       "label": "hotline",
-      "title": "press and hold \"q\" to sit in the queue for the points-hotline."
+      "title": "press and hold \"q\" to sit in the queue for the points-hotline. (300p)",
+      "cost": 300
     },
     {
       "id": 10,
       "label": "customer-service",
-      "title": "press and hold \"w\" to recieve person in hotline-queue."
+      "title": "press and hold \"w\" to recieve person in hotline-queue. (300p)",
+      "cost": 300
     },
     {
       "id": 11,
       "label": "bad-internet",
-      "title": "write \"dinosaur\" X times to get X points."
+      "title": "write \"dinosaur\" X times to get X points. (40p)",
+      "cost": 40
     },
     {
       "id": 12,
       "label": "ddr",
-      "title": "press arrows in order to gain point"
+      "title": "press arrows in order to gain point (1p)",
+      "cost": 1
     },
     {
       "id": 13,
       "label": "typeracer",
-      "title": "write something super quick to get points equal to the number of words typed."
+      "title": "write something super quick to get points equal to the number of words typed. (10p)",
+      "cost": 10
     },
     {
       "id": 14,
       "label": "rando4life",
-      "title": "get randomised points each run",
+      "title": "get randomised points each run (1p)",
+      "cost": 1,
       "hidden_pg": "(p) => Math.random(p)*10/10"
     },
     {
       "id": 15,
       "label": "cheatcode",
-      "title": "press number to get that many points"
+      "title": "press number to get that many points (300p)",
+      "cost": 300
     },
     {
       "id": 16,
       "label": "hacks",
-      "title": "negate any future point gane",
+      "title": "negate any future points gained (10000p)",
+      "cost": 10000,
       "hidden_pg": "(p) => -1.0*p"
     },
     {
       "id": 17,
       "label": "meditate",
-      "title": "press nothing to get 2p",
+      "title": "press nothing to get 2p (40p)",
+      "cost": 40,
       "hidden_pg": "(p) => 2+p"
     },
     {
       "id": 18,
       "label": "netflix-and-chill",
-      "title": "do nothing and get 2p+2p",
+      "title": "do nothing and get 2p+2p (40p)",
+      "cost": 40,
       "hidden_pg": "(p) => 4+ p"
     },
     {
       "id": 19,
       "label": "paywall",
-      "title": "cost of playing a game is increased by 1p",
+      "title": "cost of playing a game is increased by 1p (10p)",
+      "cost": 10,
       "hidden_pg": "(p) => p-1"
     },
     {
       "id": 20,
       "label": "bad-deal",
-      "title": "spend one 1p to get 1p",
+      "title": "spend one 1p to get 1p (100p)",
+      "cost": 100,
       "hidden_pg": "(p) => p"
     },
     {
       "id": 21,
       "label": "ok-deal",
-      "title": "spedn 1p to get 2p",
+      "title": "spend 1p to get 2p (100p)",
+      "cost": 100,
       "hidden_pg": "(p) => p+1"
     },
     {
       "id": 22,
       "label": "banker",
-      "title": "5% interest rate on your saved points"
+      "title": "5% interest rate on your saved points (200p)",
+      "cost": 200
     },
     {
       "id": 23,
       "label": "riksbanken",
-      "title": "-1% interest rate on your saved points"
+      "title": "-1% interest rate on your saved points (500p)",
+      "cost": 500
     },
     {
       "id": 24,
       "label": "ragequit",
-      "title": "set your saved points to 0"
+      "title": "set your saved points to 0 (1000p)",
+      "cost": 1000
     },
     {
       "id": 25,
       "label": "fountain",
-      "title": "spend a 1p (repeatable)"
+      "title": "spend a 1p (repeatable) (500p)",
+      "cost": 500
     },
     {
       "id": 26,
       "label": "donken-deal",
-      "title": "reduce cost of techs by 1p"
+      "title": "reduce cost of techs by 1p (10p)",
+      "cost": 10
     },
     {
       "id": 27,
       "label": "supersale",
-      "title": "reduce cost of techs by 10p"
+      "title": "reduce cost of techs by 10p (100p)",
+      "cost": 100
     },
     {
       "id": 28,
       "label": "markup",
-      "title": "increase cost of techs by 10p"
+      "title": "increase cost of techs by 10p (100p)",
+      "cost": 100
     }
   ],
   "edges": [
