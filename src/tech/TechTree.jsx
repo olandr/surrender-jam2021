@@ -6,10 +6,17 @@ export const TechTree = (props) => {
   const [tree, setTree] = useState();
   const [cart, setCart] = useState([]);
   const [overdraft, setOverdraft] = useState(false);
-
+  const [ruleAddition, setRuleAddition] = useState(0);
   useEffect(() => {
     setTree(generateTree());
   }, []);
+
+  useEffect(() => {
+    console.log(props.rules);
+    let ra = props.rules?.reduce((acc, next) => next.handle(acc), 0);
+    console.log(ra);
+    setRuleAddition(ra);
+  }, [props.rules]);
 
   // the graph configuration, just override the ones you need
   const options = {
@@ -60,7 +67,11 @@ export const TechTree = (props) => {
     let already_bought = tree?.nodes
       .filter((n) => props.bought.includes(n.id))
       .reduce((acc, next) => acc + next.cost, 0);
-    return vec.reduce((acc, next) => acc + next.cost, 0) - already_bought;
+    return (
+      vec.reduce((acc, next) => acc + next.cost, 0) -
+      already_bought +
+      ruleAddition
+    );
   };
 
   const isPurchasable = (id) => {

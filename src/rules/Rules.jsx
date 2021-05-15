@@ -98,7 +98,20 @@ export const loadRules = (techTree, points, setPoints) => {
       handle: <Fountain onClick={() => setPoints((prev) => prev - 1)} />,
     },
   ].filter((e) => chosen_techs(e));
-  const rules_tech = [].filter((e) => chosen_techs(e));
+  const rules_tech = [
+    {
+      id: 26,
+      handle: (c) => c - 1,
+    },
+    {
+      id: 27,
+      handle: (c) => c - 10,
+    },
+    {
+      id: 28,
+      handle: (c) => c + 10,
+    },
+  ].filter((e) => chosen_techs(e));
   const rules_bank = [
     {
       id: 22,
