@@ -11,9 +11,11 @@ export const App = () => {
     const [rules, setRules] = useState([]);
     const [hash, setHash] = useState('game');
     const [points, setPoints] = useState(0);
+    // FIXME: get techs from the actual tech tree
+    const [techTree, setTechTree] = useState([0, 15]);
     
     useEffect(() => {
-        setRules(loadRules(points, setPoints));
+        setRules(loadRules(techTree, points, setPoints));
     }, []);
 
     return (

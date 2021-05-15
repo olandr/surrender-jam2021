@@ -6,7 +6,11 @@ export const GameLoop = (props) => {
         {
             props.rules?.map((e,i) => {
 
-                return (e.handle)
+                return (
+                <div key={i}>
+                    {e.handle}
+                </div>
+                )
             })
         }
         </>
