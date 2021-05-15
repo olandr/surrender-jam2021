@@ -44,9 +44,44 @@ export const loadRules = (techTree, points, setPoints) => {
       handle: <NumPad onFinish={(e) => setRawAcc(e)} />,
     },
     {
+      id: 9,
+      handle: <KeyListener match={["KeyQ"]} onFinish={(e) => setRawAcc(e)} />,
+    },
+    {
+      id: 10,
+      handle: <KeyListener match={["KeyW"]} onFinish={(e) => setRawAcc(e)} />,
+    },
+    {
       id: 11,
       handle: (
         <TextInput match={"dinodinodino"} onFinish={(e) => setRawAcc(e)} />
+      ),
+    },
+    {
+      id: 12,
+      handle: (
+        <KeyListener
+          match={[
+            "ArrowUp",
+            "ArrowUp",
+            "ArrowDown",
+            "ArrowDown",
+            "ArrowLeft",
+            "ArrowRight",
+            "ArrowLeft",
+            "ArrowRight",
+          ]}
+          onFinish={(e) => setRawAcc(e)}
+        />
+      ),
+    },
+    {
+      id: 13,
+      handle: (
+        <TextInput
+          match={"something super quick"}
+          onFinish={(e) => setRawAcc(e)}
+        />
       ),
     },
     {
@@ -88,4 +123,25 @@ const TextInput = (props) => {
   }, [val]);
 
   return <input onChange={(e) => setVal(e.target.value)} />;
+};
+
+const KeyListener = (props) => {
+  const [correct, setCorrect] = useState(0);
+  useEffect(() => {
+    console.log(props.match);
+    if (correct === props.match.length) {
+      console.log("done!");
+      props.onFinish(props.match.length);
+    }
+  }, [correct]);
+
+  document.onkeydown = (e) => {
+    let ev = e || window.event;
+    if (ev.code === props.match[correct]) {
+      setCorrect((prev) => prev + 1);
+    } else {
+      setCorrect(0);
+    }
+  };
+  return null;
 };

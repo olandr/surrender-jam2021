@@ -10,7 +10,7 @@ import { loadRules } from "../rules/Rules.jsx";
 export const App = () => {
   const [rules, setRules] = useState([]);
   const [hash, setHash] = useState("tree");
-  const [points, setPoints] = useState(10);
+  const [points, setPoints] = useState(1000);
   // FIXME: get techs from the actual tech tree
   const [techTree, setTechTree] = useState([0]);
   const [bought, setBought] = useState([0]);
