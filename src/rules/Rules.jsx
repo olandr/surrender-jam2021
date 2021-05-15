@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import data from "../../data/techs";
 
 import { Emoji, NumPad } from "../utils/assets";
@@ -44,10 +44,14 @@ export const loadRules = (techTree, points, setPoints) => {
       handle: <NumPad onFinish={(e) => setRawAcc(e)} />,
     },
     {
-      id: 15,
+      id: 11,
       handle: (
-        <NumInput setVal={(p) => (val += p)} onFinish={(e) => setRawAcc(e)} />
+        <TextInput match={"dinodinodino"} onFinish={(e) => setRawAcc(e)} />
       ),
+    },
+    {
+      id: 15,
+      handle: <NumInput onFinish={(e) => setRawAcc(e)} />,
     },
   ].filter((e) => chosen_techs(e));
 
@@ -73,4 +77,15 @@ const NumInput = (props) => {
     }
   };
   return <input onChange={(e) => handleChange(e.target.value)} />;
+};
+
+const TextInput = (props) => {
+  const [val, setVal] = useState("");
+  useEffect(() => {
+    if (val === props.match) {
+      props.onFinish(1);
+    }
+  }, [val]);
+
+  return <input onChange={(e) => setVal(e.target.value)} />;
 };
