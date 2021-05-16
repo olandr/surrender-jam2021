@@ -52,7 +52,12 @@ export const App = () => {
 
   return (
     <>
-      <Popup open={win} position="center center" closeOnDocumentClick={false}>
+      <Popup
+        className="win"
+        open={win}
+        position="center center"
+        closeOnDocumentClick={false}
+      >
         <nobr>{"🌊".repeat(13)}</nobr>
         <br />
         {win_string}

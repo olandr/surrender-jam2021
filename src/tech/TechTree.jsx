@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { generateTree } from "../utils/tech_tree.js";
 import Graph from "react-graph-vis";
+import Popup from "reactjs-popup";
 
 export const TechTree = (props) => {
   const [tree, setTree] = useState();
@@ -84,34 +85,38 @@ export const TechTree = (props) => {
 
   const events = {
     select: (e) => {
-      if (isPurchasable(e.nodes[e.nodes.length - 1])) {
-        let c = tree?.nodes.filter((n) => e.nodes.includes(n.id));
-        setCart(c);
-      } else {
-        console.log("YOU WILL OVERDRAFT!");
-        setOverdraft(true);
+      if (e?.nodes.length > 0) {
+        if (isPurchasable(e.nodes[e.nodes.length - 1])) {
+          let c = tree?.nodes.filter((n) => e.nodes.includes(n.id));
+          setCart(c);
+        } else {
+          console.log("YOU WILL OVERDRAFT!");
+          setOverdraft(true);
+        }
       }
     },
   };
 
+  const resetCart = () => {
+    setCart([]);
+    setOverdraft(false);
+  };
   return (
     <>
       {tree && (
         <>
           <div className="tech">
-            {overdraft && (
-              <div className="overdraft">YOU WILL OVERDRAFT YOUR ACCOUNT</div>
-            )}
+            <Popup
+              className="overdraft"
+              open={overdraft}
+              position="center center"
+              onClose={resetCart}
+            >
+              YOU WILL OVERDRAFT YOUR ACCOUNT
+            </Popup>
             <div style={{ display: "block" }}>
               <button onClick={checkout}>Pay techs</button>
-              <button
-                onClick={() => {
-                  setCart([]);
-                  setOverdraft(false);
-                }}
-              >
-                Clear techs
-              </button>
+              <button onClick={resetCart}>Clear techs</button>
             </div>
           </div>
           <Graph

@@ -105,7 +105,7 @@ button {
   color: white;
 }
 
-.overdraft {
+.overdraft-content {
   margin: 8px;
   position: relative;
   text-align: center;
@@ -117,7 +117,14 @@ button {
   font-family: $font2;
 }
 
-.popup-content {
+
+.overdraft-overlay {
+  background-color: #FFB312;
+  opacity: 95%;
+}
+
+
+.win-content {
   width: 75%;
   padding: 8px;
   /* height: 100%; */
@@ -127,7 +134,7 @@ button {
   box-shadow: 2px 2px 10px lightblue;
 }
 
-.popup-overlay {
+.win-overlay {
   background-color: aliceblue;
   opacity: 95%;
 }
